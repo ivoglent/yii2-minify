@@ -1,0 +1,21 @@
+{
+    "name": "ivoglent/yii2-minify",
+    "description": "An yii2 extension which supported minify html, css and js",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","minify","yii2-minify"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Long Nguyen",
+            "email": "ivoglent@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ivoglent\\yii2\\minify\\": ""
+        }
+    }
+}
