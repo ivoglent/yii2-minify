@@ -1,7 +1,9 @@
  
 Yii2 Minify Extension
 =====================
-An yii2 extension which supported minify html, css and js
+An yii2 extension which supported minify html, css and js.
+
+*NOTE : This is basic version without any options/configs . I will improve it later...*
 
 Installation
 ------------
@@ -26,4 +28,21 @@ to the require section of your `composer.json` file.
 Usage
 -----
 
-TBD
+After installed this extension. Let config for the module:
+``` 
+ 'modules' => [
+        //...
+        'minify' => [
+            'class' => 'ivoglent\yii2\minify\Module'
+        ]
+        //...
+    ]
+```
+
+Also we need add minifier module as bootstrap
+
+``` 
+'bootstrap' => ['minify'],
+```
+
+That's all. Let enjoy!
