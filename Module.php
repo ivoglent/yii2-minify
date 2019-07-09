@@ -24,10 +24,9 @@ class Module extends \yii\base\Module implements BootstrapInterface
     public function bootstrap($app)
     {
         $app->setComponents([
-            'minifier' => [
+            'minifier' => array_merge($this->configs, [
                 'class' => Minifier::className(),
-                'configs' => $this->configs
-            ]
+            ])
         ]);
         if ($app instanceof \yii\web\Application) {
             $app->view->on(View::EVENT_END_PAGE, [$app->minifier, 'processView']);

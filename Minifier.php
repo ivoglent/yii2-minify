@@ -20,8 +20,13 @@ use yii\web\Response;
 
 class Minifier extends Component
 {
-    public $configs = [];
+    public $enabled = false;
+
+    /**
+     * @param Event $e
+     */
     public function processView(Event $e) {
+        if (!$this->enabled) return;
         /**
          * @var $view View
          */
@@ -126,6 +131,7 @@ class Minifier extends Component
      * @param Event $e
      */
     public function processResponse(Event $e) {
+        if (!$this->enabled) return;
         $response = $e->sender;
         if ($response->format == \yii\web\Response::FORMAT_HTML && !\Yii::$app->request->isAjax && !\Yii::$app->request->isPjax) {
             if (!empty($response->data)) {
