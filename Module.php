@@ -8,10 +8,8 @@
 
 namespace ivoglent\yii2\minify;
 
-
 use yii\base\Application;
 use yii\base\BootstrapInterface;
-use yii\base\Event;
 use yii\base\View;
 
 class Module extends \yii\base\Module implements BootstrapInterface
@@ -26,7 +24,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
         $app->setComponents([
             'minifier' => array_merge($this->configs, [
                 'class' => Minifier::className(),
-            ])
+            ]),
         ]);
         if ($app instanceof \yii\web\Application) {
             $app->view->on(View::EVENT_END_PAGE, [$app->minifier, 'processView']);
